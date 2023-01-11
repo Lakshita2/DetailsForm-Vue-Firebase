@@ -1,18 +1,20 @@
 module.exports = {
   root: true,
+  parserOptions: {
+    parser: 'babel-eslint'
+  },
   env: {
-    node: true,
+    browser: true
   },
   extends: [
-    "plugin:vue/vue3-essential",
-    "eslint:recommended",
-    "plugin:prettier/recommended",
+    'plugin:vue/essential',
+    'standard',
+    'prettier'
   ],
-  parserOptions: {
-    parser: "@babel/eslint-parser",
-  },
+	plugins: ['vue', 'prettier'],
   rules: {
-    "no-console": process.env.NODE_ENV === "production" ? "warn" : "off",
-    "no-debugger": process.env.NODE_ENV === "production" ? "warn" : "off",
-  },
-};
+    'generator-star-spacing': 'off',
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+    'prettier/prettier': 'error'
+  }
+}
